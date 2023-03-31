@@ -10,12 +10,14 @@ def scan_ports(target_ip, start_port, end_port):
         if result == 0:
             print(f"Port {port}: OPEN")
         sock.close()
-
-# Ejemplo de uso
 ip_range = ipaddress.ip_network("192.168.1.0/24")
-for ip in ip_range.hosts():
-    print(f"Scanning {ip}")
-    scan_ports(ip, 1, 100)
+try:
+    for ip in ip_range.hosts():
+        print(f"Scanning {ip}")
+        scan_ports(ip, 1, 100)
+except KeyboardInterrupt:
+    print("\nExiting...")
+
 
 
 
