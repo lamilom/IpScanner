@@ -14,7 +14,7 @@ ip_range = ipaddress.ip_network("192.168.1.0/24")
 try:
     for ip in ip_range.hosts():
         print(f"Scanning {ip}")
-        scan_ports(ip, 50, 80)
+        scan_ports(ip, 50, 85)
 except KeyboardInterrupt:
     print("\nExiting...")
 
